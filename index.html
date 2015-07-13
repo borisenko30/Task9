@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Task9</title>
+		<link rel='stylesheet' href='myCss.css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.4.2/angular-resource.js"></script>
+	</head>
+	
+	<body ng-app='app' ng-controller='MyController as ctrl'>
+		
+		<div id='pane' my-close></div>
+		
+		<div ng-repeat='item in ctrl.list | limitTo:20'>
+			<div class="listItem">
+				<div my-dir><img ng-attr-url='{{item.url}}' ng-src="{{item.thumbnailUrl}}" alt="avatar"></div>
+				<div class='label'>{{item.title}}</div>
+			</div>
+		</div>
+		<script src="app.module.js"></script>
+		<script src="myController.js"></script>
+		<script src="httpFactory.js"></script>
+		<script src="resourceFactory.js"></script>
+		<script src="myDir.js"></script>
+		<script src="myClose.js"></script>
+	</body>
+	
+</html>
